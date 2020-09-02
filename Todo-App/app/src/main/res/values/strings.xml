@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Animations</string>
+    <string name="add">ADD</string>
+    <string name="add_item_here">Add Item here</string>
 </resources>
