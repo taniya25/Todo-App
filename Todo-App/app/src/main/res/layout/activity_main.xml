@@ -16,8 +16,9 @@
 
     <EditText
         android:id="@+id/addItem"
-        android:layout_width="375dp"
-        android:layout_height="49dp"
+        android:layout_width="306dp"
+        android:layout_height="46dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/add_item_here"
         android:inputType="textPersonName"
@@ -25,17 +26,17 @@
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button"
-        app:layout_constraintVertical_bias="0.38"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="502dp"
-        android:layout_height="766dp"
-        android:i
+        android:layout_width="393dp"
+        android:layout_height="662dp"
+        android:id="@+id/listView"
         app:layout_constraintBottom_toTopOf="@+id/addItem"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494" />
+        app:layout_constraintVertical_bias="0.52" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
