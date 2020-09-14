@@ -12,9 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
-    public interface onClickListener{
-        void onItemClicked(int position);
-    }
 
     public interface onLongClickListener {
         void onItemLongClicked(int position);
@@ -23,12 +20,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     private ViewHolder holder;
     private int position;
     onLongClickListener longClickListener;
-    onClickListener clickListener;
 
-    public ItemsAdapter(ArrayList<String> items, onLongClickListener longClickListener, onClickListener clickListener) {
+    public ItemsAdapter(ArrayList<String> items, onLongClickListener longClickListener) {
         this.items = items;
         this.longClickListener = longClickListener;
-        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -67,13 +62,6 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         //Update the view inside of the VH with this data
         public void bind(String item) {
             tvItem.setText(item);
-            tvItem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    clickListener.onItemClicked(getAdapterPosition());
-
-                }
-            });
             tvItem.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
